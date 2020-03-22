@@ -40,13 +40,13 @@ public class AndroidTest {
         CountBasicSteps countBasicSteps = new CountBasicSteps();
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//android.view.ViewGroup[@resourse-id = 'com.google.android.calculator:id/pad_advanced']")));
         int[] numbersForAssessment = new int[]{2, 3};
-        String operation = "вычесть";
+        MathOperations operation = MathOperations.SUBTRACTION;
 
         for (int i = 0; i < numbersForAssessment.length; i++) {
             MobileElement number = (MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text = '" + numbersForAssessment[i] + "']"));
             number.click();
             if (i < numbersForAssessment.length - 1) {
-                MobileElement operationButton = (MobileElement) driver.findElement(By.xpath("//android.widget.Button[@content-desc = '" + operation + "']"));
+                MobileElement operationButton = (MobileElement) driver.findElement(By.xpath("//android.widget.Button[@content-desc = '" + operation.toString() + "']"));
                 operationButton.click();
             }
         }

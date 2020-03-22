@@ -1,13 +1,14 @@
 public class CountBasicSteps {
     MathematicalOperationsSteps math = new MathematicalOperationsSteps();
-    public int countResultForFixedNumberOperation(String operation, int...args) {
+
+    public int countResultForFixedNumberOperation(MathOperations operation, int...numbers) {
         int result = 0;
-        if (operation.equalsIgnoreCase("умножение")) {
-            result = math.multiplicationOperation(args);
-        } else if (operation.equalsIgnoreCase("вычесть")) {
-            result = math.subtractionOperation(args);
-        } else if (operation.equalsIgnoreCase("сложить")) {
-            result = math.additionOperation(args);
+        if (operation.equals(MathOperations.MULTIPLICATION)) {
+            result = math.multiplicationOperation(numbers);
+        } else if (operation.equals(MathOperations.SUBTRACTION)) {
+            result = math.subtractionOperation(numbers);
+        } else if (operation.equals(MathOperations.ADDITION)) {
+            result = math.additionOperation(numbers);
         }
         return result;
     }
