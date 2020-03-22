@@ -35,12 +35,14 @@ public class AndroidTest {
     }
 
     @Test
-    public void simpleMonoOperationTest() {
+    public void subtractionOperationTest() {
         CalcFiguresSteps calcFiguresSteps = new CalcFiguresSteps();
         CountBasicSteps countBasicSteps = new CountBasicSteps();
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//android.view.ViewGroup[@resourse-id = 'com.google.android.calculator:id/pad_advanced']")));
         int[] numbersForAssessment = new int[]{2, 3};
         MathOperations operation = MathOperations.SUBTRACTION;
+
+        //waiting until advanced operation penal collapsed
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//android.view.ViewGroup[@resourse-id = 'com.google.android.calculator:id/pad_advanced']")));
 
         for (int i = 0; i < numbersForAssessment.length; i++) {
             MobileElement number = (MobileElement) driver.findElement(By.xpath("//android.widget.Button[@text = '" + numbersForAssessment[i] + "']"));

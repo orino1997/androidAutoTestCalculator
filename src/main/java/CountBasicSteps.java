@@ -1,5 +1,5 @@
 public class CountBasicSteps {
-    MathematicalOperationsSteps math = new MathematicalOperationsSteps();
+    private MathematicalOperationsSteps math = new MathematicalOperationsSteps();
 
     public int countResultForFixedNumberOperation(MathOperations operation, int...numbers) {
         int result = 0;
